@@ -1,6 +1,7 @@
-
-const apiKey = '&appid=25497e53cd981474f6fc36682c843a45&units=imperial'
-
+const api = {
+    key: "4581bf79a687945e708f9ee09458b6bc",
+    base: "https://api.openweathermap.org/data/2.5/"
+}
 
 const search = document.querySelector(".search");
 const btn = document.querySelector(".btn");
@@ -15,7 +16,7 @@ function getInput (event) {
 }
 
 function getData () {
-    fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${search.value}${apiKey}`)
+    fetch(`${api.base}weather?q=${search.value}&units=metric&appid=${api.key}`)
         .then(response => {
             return response.json();
         }).then(displayData);

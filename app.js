@@ -15,7 +15,7 @@ function getInput (event) {
 }
 
 function getData () {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${search.value}${apiKey}`)
+    fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${search.value}${apiKey}`)
         .then(response => {
             return response.json();
         }).then(displayData);

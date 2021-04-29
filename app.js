@@ -22,7 +22,7 @@ function getData () {
         
 }
 
-async function displayData (response) {
+function displayData (response) {
     // console.log(response);
     if (response.cod === "404") {
         const error = document.querySelector(".error");
